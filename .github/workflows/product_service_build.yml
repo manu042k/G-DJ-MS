@@ -34,7 +34,7 @@ jobs:
       - name: Run Tests
         run: |
           cd product_service
-          pytest  # Run your tests for product_service
+          ./manage.py test  # Run your tests for product_service
 
       - name: Lint code
         run: |
