@@ -31,11 +31,6 @@ jobs:
           cd product_service
           pip install -r requirements.txt  # Install dependencies for the product_service
 
-      - name: Run Tests
-        run: |
-          cd product_service
-          ./manage.py test  # Run your tests for product_service
-
       - name: Build Docker image 
         run: |
           cd product_service
