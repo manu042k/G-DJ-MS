@@ -1,6 +1,7 @@
 name: Deploy Services with Docker Compose
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["Build, Test, and Deploy Services"]
     types:
