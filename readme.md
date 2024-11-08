@@ -1,4 +1,5 @@
-# Dumping daily notes  
+# Dumping daily notes
+
 # Microservices Project v1
 
 ## Overview
@@ -14,3 +15,10 @@ This project is an implementation of a microservices architecture. It aims to de
   - **Backend**: Django
   - **API Gateway**: NGINX
   - **Containerization**: Docker
+
+## TODO
+
+- Caching
+- Message Queue
+- Kubernetes
+- CI/CD
