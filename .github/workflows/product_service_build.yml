@@ -1,0 +1,47 @@
+name: Build Product Service
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to the main branch
+    paths:
+      - "product_service/**" # Only trigger if changes happen inside the product_service folder
+  pull_request:
+    branches:
+      - main # Trigger on PR to the main branch
+    paths:
+      - "product_service/**" # Only trigger if changes happen inside the product_service folder
+  workflow_dispatch: # Allow manual triggering from GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Use the latest Ubuntu image for the runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Checkout the repository code
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9" # Set your required Python version
+
+      - name: Install dependencies
+        run: |
+          cd product_service
+          pip install -r requirements.txt  # Install dependencies for the product_service
+
+      - name: Run Tests
+        run: |
+          cd product_service
+          pytest  # Run your tests for product_service
+
+      - name: Lint code
+        run: |
+          cd product_service
+          flake8 .  # Run a linter for your Python code
+
+      - name: Build Docker image (optional)
+        run: |
+          cd product_service
+          docker build -t product_service_image .  # Build a Docker image if needed
