@@ -20,3 +20,6 @@ typing_extensions==4.12.2
 uritemplate==4.1.1
 python-dotenv
 pytest
+django-redis==5.2.0
+django-cors-headers==4.6.0
+
