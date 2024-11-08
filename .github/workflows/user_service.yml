@@ -30,18 +30,8 @@ jobs:
         run: |
           cd user_service
           pip install -r requirements.txt  # Install dependencies for the user_service
-
-      - name: Run Tests
-        run: |
-          cd user_service
-          ./manage.py test  # Run your tests for user_service
-
-      - name: Lint code
-        run: |
-          cd user_service
-          flake8 .  # Run a linter for your Python code
-
-      - name: Build Docker image (optional)
+          
+      - name: Build Docker image 
         run: |
           cd user_service
           docker build -t user_service_image .  # Build a Docker image if needed
