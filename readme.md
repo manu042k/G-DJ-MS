@@ -15,7 +15,7 @@ This project is an implementation of a microservices architecture. It aims to de
   - **Backend**: Django
   - **API Gateway**: NGINX
   - **Containerization**: Docker
-  - \*\*CICD: Github workflow
+  - **CICD: Github workflow
 
 ## TODO
 
