@@ -1,16 +1,11 @@
 name: Build Product Service
 
 on:
-  push:
-    branches:
-      - main # Trigger on push to the main branch
-    paths:
-      - "product_service/**" # Only trigger if changes happen inside the product_service folder
-  pull_request:
-    branches:
-      - main # Trigger on PR to the main branch
-    paths:
-      - "product_service/**" # Only trigger if changes happen inside the product_service folder
+  workflow_run:
+    workflows: ["Build, Test, and Deploy Services"]
+    types:
+      - completed
+
   workflow_dispatch: # Allow manual triggering from GitHub UI
 
 jobs:
